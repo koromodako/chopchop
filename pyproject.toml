@@ -1,0 +1,60 @@
+[project]
+name = "chopchop"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["chopchop", "api", "hashing", "reverse"]
+description = "Chopchop API Hashing Tool"
+requires-python = ">=3.12"
+dynamic = ["version"]
+authors = [
+  { name="koromodako", email="koromodako@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "rich~=14.0",
+    "lief~=0.16",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/koromodako/chopchop"
+"Repository" = "https://github.com/koromodako/chopchop"
+"Bug Tracker" = "https://github.com/koromodako/chopchop/issues"
+
+
+[project.scripts]
+chopchop = "chopchop.main:app"
+
+
+[build-system]
+requires = ["setuptools>=79", "setuptools_scm>=8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chopchop", "chopchop.*"]
+
+
+[tool.setuptools_scm]
+version_file = "chopchop/__version__.py"
+
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+
+
+[tool.isort]
+profile = "black"
+line_length = 79
